@@ -21,7 +21,7 @@
 //Output: [0, 0, 1, 1, 2, 2]
 
 
-package Arrays;
+package Arrays.VIP;
 
 import java.util.*;
 

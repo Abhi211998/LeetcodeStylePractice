@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.VIP;
 
 import java.util.*;
 
