@@ -55,9 +55,34 @@ import java.util.*;
 
 public class RotateArrayPractice {
 
+    //Method to normalize k:
+    public static int normalizeK(int n, int k){
+        if( n == 0) return 0;
+        k = k % n;
+        if(k<0) k = k + n;
+        return k;
+    }
+
     // Rotate right by k using extra array (O(n) space)
     public static void rotateRightExtra(int[] nums, int k) {
 
+        int n = nums.length;
+        k = normalizeK(n,k);
+        if(k==0) return;
+
+        int[] temp = new int[n];
+
+        //Copy last k items to front:
+        for(int i=0; i<k; i++){
+            temp[i] = nums[n-k+i];
+        }
+
+        //Copy first n-k items after:
+        for(int i=0; i<n-k; i++){
+            temp[k+i] = nums[i];
+        }
+
+        System.arraycopy(temp, 0, nums, 0, n);
     }
 
     // Rotate right by k using reverse method (in-place)
